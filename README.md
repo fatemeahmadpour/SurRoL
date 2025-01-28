@@ -1,43 +1,43 @@
-# SurRoL: An Open-source Reinforcement Learning Centered and dVRK Compatible Platform for Surgical Robot Learning
+# SurRoL: یک پلتفرم منبع‌باز با تمرکز بر یادگیری تقویتی و سازگار با dVRK برای یادگیری ربات‌های جراحی
 
-### [[Project Website]](https://med-air.github.io/SurRoL/)
+### [[وب‌سایت پروژه]](https://med-air.github.io/SurRoL/)
 
-ISMR'22 [Integrating artificial intelligence and augmented reality in robotic surgery: An initial dVRK study using a surgical education scenario](https://arxiv.org/abs/2201.00383) <br>
-IROS'21 [SurRoL: An open-source reinforcement learning centered and dVRK compatible platform for surgical robot learning](https://arxiv.org/abs/2108.13035)
-
+**ISMR'22** [ادغام هوش مصنوعی و واقعیت افزوده در جراحی رباتیک: یک مطالعه اولیه dVRK با استفاده از سناریوی آموزشی جراحی](https://arxiv.org/abs/2201.00383)  
+**IROS'21** [SurRoL: یک پلتفرم منبع‌باز با تمرکز بر یادگیری تقویتی و سازگار با dVRK برای یادگیری ربات‌های جراحی](https://arxiv.org/abs/2108.13035)
 
 <p align="center">
+
    <img src="resources/img/surrol-overview.png" alt="SurRoL"/>
+
 </p>
 
-## Features
+## ویژگی‌ها
 
-- [dVRK](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki) compatible [robots](./surrol/robots).
-- [Gym](https://github.com/openai/gym) style [API](./surrol/gym) for reinforcement learning.
-- Ten surgical-related [tasks](./surrol/tasks).
-- Various object [assets](./surrol/assets).
-- Based on [PyBullet]((https://github.com/bulletphysics/bullet3)) for physics simulation.
+- سازگاری با [ربات‌های dVRK](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki).  
+- [API](./surrol/gym) سبک [Gym](https://github.com/openai/gym) برای یادگیری تقویتی.  
+- شامل ده [وظیفه مرتبط با جراحی](./surrol/tasks).  
+- دارای انواع مختلف [اشیا](./surrol/assets).  
+- مبتنی بر [PyBullet](https://github.com/bulletphysics/bullet3) برای شبیه‌سازی فیزیک.  
 
-## Installation
+## نصب
 
-The project is built on Ubuntu with Python 3.7,
-[PyBullet](https://github.com/bulletphysics/bullet3),
-[Gym 0.15.6](https://github.com/openai/gym/releases/tag/0.15.6),
-and evaluated with [Baselines](https://github.com/openai/baselines),
-[TensorFlow 1.14](https://www.tensorflow.org/install/pip).
+این پروژه روی سیستم عامل اوبونتو و با استفاده از Python 3.7،  
+[PyBullet](https://github.com/bulletphysics/bullet3)،  
+[Gym 0.15.6](https://github.com/openai/gym/releases/tag/0.15.6)،  
+و [Baselines](https://github.com/openai/baselines)  
+و همچنین با استفاده از [TensorFlow 1.14](https://www.tensorflow.org/install/pip) ارزیابی شده است.
 
-### Prepare environment
+### آماده‌سازی محیط
 
-1. Create a conda virtual environment and activate it.
-
+1. ایجاد یک محیط مجازی Conda و فعال کردن آن:
     ```shell
     conda create -n surrol python=3.7 -y
     conda activate surrol
     ```
 
-2. Install gym (slightly modified), tensorflow-gpu==1.14, baselines (modified).
+2. نصب Gym (نسخه اصلاح‌شده)، tensorflow-gpu==1.14، و baselines (نسخه اصلاح‌شده).
 
-### Install SurRoL
+### نصب SurRoL
 
 ```shell
 git clone https://github.com/jiaqixuac/surrol.git
@@ -45,20 +45,18 @@ cd surrol
 pip install -e .
 ```
 
-## Get started
+## شروع به کار
 
-The robot control API follows [dVRK](https://github.com/jhu-dvrk/dvrk-ros/tree/master/dvrk_python/src/dvrk)
-(before "crtk"), which is compatible with the real-world dVRK robots.
+API کنترل ربات از [dVRK](https://github.com/jhu-dvrk/dvrk-ros/tree/master/dvrk_python/src/dvrk) (قبل از "crtk") پیروی می‌کند، که با ربات‌های واقعی dVRK سازگار است.  
 
-You may have a look at the jupyter notebooks in [tests](./tests).
-There are some test files for [PSM](./tests/test_psm.ipynb) and [ECM](./tests/test_ecm.ipynb),
-that contains the basic procedures to start the environment, load the robot, and test the kinematics.
+می‌توانید نگاهی به Jupyter Notebookهای موجود در [tests](./tests) بیندازید.  
+چند فایل آزمایشی برای [PSM](./tests/test_psm.ipynb) و [ECM](./tests/test_ecm.ipynb) وجود دارد که شامل رویه‌های اصلی برای شروع محیط، بارگذاری ربات، و آزمایش کینماتیک هستند.  
 
-We also provide some [run files](./run) to evaluate the environments using baselines.
+همچنین فایل‌هایی برای اجرای [run](./run) برای ارزیابی محیط‌ها با استفاده از Baselines ارائه شده است.
 
-## Citation
+## استناد
 
-If you find the paper or the code helpful to your research, please cite the project.
+اگر این مقاله یا کد برای تحقیقات شما مفید بود، لطفاً پروژه را استناد کنید.
 
 ```
 @inproceedings{xu2021surrol,
@@ -69,19 +67,20 @@ If you find the paper or the code helpful to your research, please cite the proj
   organization={IEEE}
 }
 ```
-## License
 
-SurRoL is released under the [MIT license](LICENSE).
+## لایسنس
 
-## Acknowledgement
+SurRoL تحت [لایسنس MIT](LICENSE) منتشر شده است.
 
-The code is built with the reference of [dVRK](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki),
-[AMBF](https://github.com/WPI-AIM/ambf),
-[dVRL](https://github.com/ucsdarclab/dVRL),
-[RLBench](https://github.com/stepjam/RLBench),
-[Decentralized-MultiArm](https://github.com/columbia-ai-robotics/decentralized-multiarm),
-[Ravens](https://github.com/google-research/ravens), etc.
+## تقدیر و تشکر
 
+این کد با ارجاع به پروژه‌های [dVRK](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki)،  
+[AMBF](https://github.com/WPI-AIM/ambf)،  
+[dVRL](https://github.com/ucsdarclab/dVRL)،  
+[RLBench](https://github.com/stepjam/RLBench)،  
+[Decentralized-MultiArm](https://github.com/columbia-ai-robotics/decentralized-multiarm)،  
+[Ravens](https://github.com/google-research/ravens)، و غیره ساخته شده است.
 
-## Contact
-For any questions, please feel free to email <a href="mailto:qidou@cuhk.edu.hk">qidou@cuhk.edu.hk</a>
+## تماس
+
+برای هرگونه سوال، لطفاً به <a href="mailto:qidou@cuhk.edu.hk">qidou@cuhk.edu.hk</a> ایمیل بزنید.
