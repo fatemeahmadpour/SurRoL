@@ -30,7 +30,7 @@ masks = []
 
 def main():
     env = gym.make(args.env, render_mode='human')  # 'human'
-    num_itr = 100 if not args.video else 1
+    num_itr = 1
     cnt = 0
     init_state_space = 'random'
     env.reset()
@@ -38,7 +38,7 @@ def main():
     init_time = time.time()
 
     if args.steps is None:
-        args.steps = env._max_episode_steps
+        args.steps = env._max_episode_steps 
 
     print()
     while len(actions) < num_itr:
