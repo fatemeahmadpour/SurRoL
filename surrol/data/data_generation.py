@@ -30,7 +30,7 @@ masks = []
 
 def main():
     env = gym.make(args.env, render_mode='human')  # 'human'
-    num_itr = 1
+    num_itr = 100 if not args.video else 1
     cnt = 0
     init_state_space = 'random'
     env.reset()
